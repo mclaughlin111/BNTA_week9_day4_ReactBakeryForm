@@ -1,4 +1,5 @@
 import { useState } from "react";
+import CakeList from "./CakeList.js";
 import Cake from "./Cake.js";
 
 const CakeContainer = () => {
@@ -16,7 +17,8 @@ const CakeContainer = () => {
 					  "milk"
 				  ],
 				  price: 5,
-				   rating: 5
+				   rating: 5,
+				   id: 1
 			},
 			{
 				 cakeName: "Tea Loaf",
@@ -29,7 +31,9 @@ const CakeContainer = () => {
 					  "strong tea",
 				  ],
 				  price: 2,
-				  rating: 3
+				  rating: 3,
+				  id: 2
+				 
 			},
 			{
 				 cakeName: "Carrot Cake",
@@ -42,16 +46,17 @@ const CakeContainer = () => {
 					  "sugar",
 				   ],
 				   price: 8,
-				   rating: 5
+				   rating: 5,
+				   id: 3
 			} 
 		]		
 	)
 
   return (
     <>
-        <Cake />
-        <Cake />
-        <Cake />
+	<hr></hr>
+        <h1>React Bakery</h1>
+		<CakeList cakes={listOfCakes}/ >
     </>
   )
 }
