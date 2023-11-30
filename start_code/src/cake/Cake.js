@@ -1,10 +1,17 @@
 const Cake = ({cake}) => {
 
   return (
-    <>
-        <h2>This is a cake</h2>
-        <h2>Cake: {cake.cakeName}</h2>
-    </>
+
+    <div>
+      <p><b>Cake:</b> {cake.cakeName}</p>
+      <p><b>Rating:</b> {cake.rating}</p>
+      <ul>{cake.ingredients.map(ingredient => {
+        return<li>{ingredient}</li>})}</ul>
+      <p><b>Price:</b> £{cake.price}</p>
+      <hr />
+
+    </div>
+
   )
 }
 

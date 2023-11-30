@@ -1,6 +1,7 @@
 import { useState } from "react";
 import CakeList from "./CakeList.js";
-import Cake from "./Cake.js";
+// import Cake from "./Cake.js";
+import CakeForm from "./CakeForm.js"
 
 const CakeContainer = () => {
 
@@ -52,13 +53,20 @@ const CakeContainer = () => {
 		]		
 	)
 
+	const handleCakeSubmission=(newCake) => {
+		const updatedCakes=[...listOfCakes]
+		updatedCakes.push(newCake);
+		setListOfCakes(updatedCakes);
+	}
+
   return (
     <>
 	<hr></hr>
         <h1>React Bakery</h1>
-		<CakeList cakes={listOfCakes}/ >
+		<CakeForm onCakeSubmission={handleCakeSubmission}/>
+		<CakeList cakes={listOfCakes}/>
     </>
-  )
+  );
 }
 
 export default CakeContainer;
